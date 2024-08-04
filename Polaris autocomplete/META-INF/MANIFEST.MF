@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Polaris_autocomplete
+Bundle-SymbolicName: Polaris_autocomplete;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: polaris_autocomplete.Activator
+Bundle-Vendor: Ivan Gavlik
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.google.gson;bundle-version="2.8.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-10
+Automatic-Module-Name: Polaris_autocomplete
+Bundle-ActivationPolicy: lazy

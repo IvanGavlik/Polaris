@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="Polaris.commands.util"
+            name="Polaris Speach Recognition">
+      </category>
+      <command
+            categoryId="Polaris.commands.util"
+            name="Polaris start"
+            id="Polaris.commands.start">
+      </command>
+       <command
+            categoryId="Polaris.commands.util"
+            name="Polaris stop"
+            id="Polaris.commands.stop">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="polaris.handlers.PolarisHandler"
+            commandId="Polaris.commands.start">
+      </handler>
+        <handler
+            class="polaris.handlers.PolarisStop"
+            commandId="Polaris.commands.stop">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="Polaris.toolbars.util">
+            <command
+                  id="Polaris.toolbars.start"
+                  commandId="Polaris.commands.start"
+                  icon="icons/icon1.png"
+                  tooltip="Start Polaris">
+            </command>
+            <command
+                  id="Polaris.toolbars.stop"
+                  commandId="Polaris.commands.stop"
+                  icon="icons/icon2.png"
+                  tooltip="Stop Polaris">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="polaris.preferences.PolarisPreferencePage"
+            id="polaris.preferences.PolarisPreferencePage"
+            name="Polaris Preferences">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="polaris.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+
+</plugin>
